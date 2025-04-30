@@ -187,15 +187,7 @@ Pendekatan ini menggunakan fungsi PHP native untuk output buffering (ob_start, o
 - Pencegahan duplikasi pendaftaran (satu mahasiswa tidak boleh mendaftar di mata kuliah yang sama dua kali)
 - Penggunaan `htmlspecialchars()` untuk mencegah XSS
 
-## Diagram Alur
-
-Berikut adalah gambaran alur program secara umum:
-
-```
-Request → index.php (Front Controller) → Controller → Model → Database
-                                       ↓
-           Response ← View ← Template/Output Buffering ← Controller ← Model ← Database
-```
+## Alur CRUD
 
 Untuk alur operasi CRUD:
 
@@ -211,10 +203,6 @@ Untuk alur operasi CRUD:
    
 4. **Delete Operation**:
    - Request → Controller → Model (delete) → Database → Redirect
-  
-## Kesimpulan
-
-Program menerapkan prinsip **Single Responsibility** dan **Separation of Concerns** di mana logika bisnis, presentasi, dan alur program dipisahkan dengan jelas. Meski terdapat perbedaan pendekatan pada implementasi View, program ini berhasil menyediakan sistem manajemen mahasiswa, mata kuliah, dan pendaftaran yang komprehensif dengan arsitektur yang terstruktur.
 
 ## Dokumentasi
 
