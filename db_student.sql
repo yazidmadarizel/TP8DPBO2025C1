@@ -1,3 +1,13 @@
+-- Hapus database jika sudah ada
+DROP DATABASE IF EXISTS db_student;
+
+-- Buat database baru
+CREATE DATABASE db_student;
+
+-- Gunakan database yang baru dibuat
+USE db_student;
+
+-- Buat tabel students
 CREATE TABLE `students` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -8,6 +18,7 @@ CREATE TABLE `students` (
   PRIMARY KEY (`id`)
 );
 
+-- Buat tabel courses
 CREATE TABLE `courses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `course_code` varchar(10) NOT NULL,
@@ -17,6 +28,7 @@ CREATE TABLE `courses` (
   PRIMARY KEY (`id`)
 );
 
+-- Buat tabel enrollments
 CREATE TABLE `enrollments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `student_id` int(11) NOT NULL,
@@ -28,19 +40,22 @@ CREATE TABLE `enrollments` (
   FOREIGN KEY (`course_id`) REFERENCES `courses`(`id`) ON DELETE CASCADE
 );
 
+-- Tambahkan data ke tabel students
 INSERT INTO `students` (`name`, `nim`, `phone`, `email`, `join_date`) 
 VALUES 
 ('Iqbal Rahmat', '2303820', '081234567890', 'iqbalrahmat@gmail.com', '2023-08-01'),
 ('Hafiz Minhaj', '2204999', '082345678901', 'hafizminhaj@gmail.com', '2023-08-02'),
 ('Edy Suparman', '2404854', '083456789012', 'edysuparman@gmail.com', '2023-08-03');
 
+-- Tambahkan data ke tabel courses (dalam Bahasa Indonesia)
 INSERT INTO `courses` (`course_code`, `course_name`, `credit_hours`, `description`)
 VALUES
-('CS101', 'Introduction to Programming', 3, 'This course introduces basic programming concepts using a high-level programming language, focusing on problem-solving, algorithms, and software design.'),
-('CS102', 'Data Structures and Algorithms', 3, 'This course covers fundamental data structures (arrays, linked lists, trees, graphs) and algorithms for searching, sorting, and optimization.'),
-('CS201', 'Database Systems', 3, 'Introduction to relational databases, SQL, database design, normalization, and transaction management. Students will also learn about NoSQL databases.'),
-('CS202', 'Operating Systems', 3, 'Covers the fundamentals of operating systems, including process management, memory management, file systems, and system security.');
+('CS101', 'Pengantar Pemrograman', 3, 'Mata kuliah ini memperkenalkan konsep dasar pemrograman menggunakan bahasa pemrograman tingkat tinggi, dengan fokus pada pemecahan masalah, algoritma, dan desain perangkat lunak.'),
+('CS102', 'Struktur Data dan Algoritma', 3, 'Mata kuliah ini membahas struktur data dasar (array, linked list, tree, graph) dan algoritma untuk pencarian, pengurutan, dan optimasi.'),
+('CS201', 'Sistem Basis Data', 3, 'Pengantar sistem basis data relasional, SQL, desain basis data, normalisasi, dan manajemen transaksi. Mahasiswa juga akan mempelajari basis data NoSQL.'),
+('CS202', 'Sistem Operasi', 3, 'Membahas dasar-dasar sistem operasi, termasuk manajemen proses, manajemen memori, sistem berkas, dan keamanan sistem.');
 
+-- Tambahkan data ke tabel enrollments
 INSERT INTO `enrollments` (`student_id`, `course_id`, `enrollment_date`, `grade`)
 VALUES
 (1, 1, '2023-08-05', 'A'),
