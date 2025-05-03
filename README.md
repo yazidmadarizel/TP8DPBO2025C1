@@ -206,5 +206,9 @@ Untuk alur operasi CRUD:
 
 ## Dokumentasi
 
-https://github.com/user-attachments/assets/af4e1aa9-a4c0-488c-96e5-3887f6a29d86
+
+
+https://github.com/user-attachments/assets/ed4a9220-709b-44e7-a49a-94b8bb1d0e38
+
+
 
