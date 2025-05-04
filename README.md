@@ -4,7 +4,7 @@ Saya Yazid Madarizel dengan NIM 2305328 mengerjakan soal TP 8 dalam mata kuliah 
 
 ## Sistem Manajemen Mahasiswa dan Mata Kuliah
 
-![image](https://github.com/user-attachments/assets/e2721eb2-56c3-478a-a0e4-84825076edb3)
+![image](https://github.com/user-attachments/assets/88cdd5dd-874d-4797-ab96-61dcc80b6f40)
 
 ## Overview
 
